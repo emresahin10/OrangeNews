@@ -4,6 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    tools:context=".ui.SplashActivity">
 
+    <ImageView
+        android:id="@+id/imgTopCorner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_shape"
+        android:contentDescription="@string/shape"/>
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="114dp"
+        android:layout_height="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo"
+        android:contentDescription="@string/logo"/>
+
+    <ImageView
+        android:id="@+id/imgLogoNewspaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgLogo"
+        app:layout_constraintStart_toStartOf="@+id/imgLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:srcCompat="@drawable/ic_newspaper"
+        android:contentDescription="@string/logo"/>
+
+    <ImageView
+        android:id="@+id/imgBottomCorner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_shape"
+        android:contentDescription="@string/shape" />
 </androidx.constraintlayout.widget.ConstraintLayout>
