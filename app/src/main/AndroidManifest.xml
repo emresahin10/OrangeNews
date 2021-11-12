@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrangeNews">
         <activity
+            android:name=".ui.Auth.AuthActivity"
+            android:windowSoftInputMode="adjustUnspecified"
+            android:exported="true" />
+        <activity
             android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -28,6 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -2,4 +2,11 @@
     <string name="app_name">Orange News</string>
     <string name="shape">Shape</string>
     <string name="logo">Logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="new_naccount">New \nAccount</string>
 </resources>

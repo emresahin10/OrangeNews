@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.denbase.orangenews.databinding.ActivitySplashBinding
+import com.denbase.orangenews.ui.Auth.AuthActivity
 import com.denbase.orangenews.utils.Constants.Companion.SPLASH_TIME
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
@@ -30,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
         stopDelay()
         job = scope.launch {
             delay(SPLASH_TIME)
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, AuthActivity::class.java)
             startActivity(intent)
             finish()
         }

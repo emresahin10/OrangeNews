@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "658111028338",
+    "project_id": "orange-news-f1caa",
+    "storage_bucket": "orange-news-f1caa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658111028338:android:d1c77f129cf4ded2b676eb",
+        "android_client_info": {
+          "package_name": "com.denbase.orangenews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658111028338-cu3e3osvn53c6bhtl92icv6ktt7jsfd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjwNobkjs80cxCldULUwQcFWRRJpKQDSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658111028338-cu3e3osvn53c6bhtl92icv6ktt7jsfd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

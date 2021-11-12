@@ -2,4 +2,9 @@
 <resources>
     <string name="shape">Shape</string>
     <string name="logo">Logo</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="new_naccount">New \nAccount</string>
 </resources>
