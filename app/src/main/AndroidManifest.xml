@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.denbase.orangenews">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".di.OrangeNewsApplication"
         android:allowBackup="true"

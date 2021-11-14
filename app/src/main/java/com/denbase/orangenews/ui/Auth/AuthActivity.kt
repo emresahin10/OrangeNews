@@ -11,6 +11,7 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_OrangeNewsNoActionBar)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()

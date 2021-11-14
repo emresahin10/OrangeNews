@@ -6,5 +6,12 @@
     <string name="password">Password</string>
     <string name="full_name">Full Name</string>
     <string name="sign_up">Sign Up</string>
-    <string name="new_naccount">New \nAccount</string>
+    <string name="new_account">New \nAccount</string>
+    <string name="auth_title">Be up to date, \nread and watch</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or_sign_up_and_login_with">or Sign Up and Login with</string>
+    <string name="google">Google</string>
+    <string name="welcome_back">Welcome back</string>
 </resources>
