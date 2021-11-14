@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrangeNews">
         <activity
-            android:name=".ui.Auth.AuthActivity"
+            android:name=".ui.auth.AuthActivity"
             android:windowSoftInputMode="adjustUnspecified"
             android:exported="true" />
         <activity

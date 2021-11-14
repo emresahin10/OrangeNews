@@ -1,9 +1,11 @@
 package com.denbase.orangenews.di
 
+import android.content.Context
 import com.denbase.orangenews.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,6 +16,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideApplicationContext(
+        @ApplicationContext context: Context) = context
 
     @Singleton
     @Provides

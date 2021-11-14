@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.denbase.orangenews.databinding.ActivitySplashBinding
-import com.denbase.orangenews.ui.Auth.AuthActivity
+import com.denbase.orangenews.ui.auth.AuthActivity
 import com.denbase.orangenews.utils.Constants.Companion.SPLASH_TIME
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
