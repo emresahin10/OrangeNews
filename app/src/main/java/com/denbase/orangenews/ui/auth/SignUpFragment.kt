@@ -10,6 +10,8 @@ import com.denbase.orangenews.R
 import com.denbase.orangenews.databinding.FragmentSignUpBinding
 import com.denbase.orangenews.ui.MainActivity
 import com.denbase.orangenews.utils.Resource
+import com.denbase.orangenews.utils.hideView
+import com.denbase.orangenews.utils.showView
 import com.denbase.orangenews.viewmodels.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,14 +27,15 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         viewModel = ViewModelProvider(requireActivity()).get(AuthViewModel::class.java)
 
-        signUp()
-        login()
+        //signUp()
+        //login()
 
         binding.btnSignup.setOnClickListener {
             viewModel.signupWithMail(
                 fullName = binding.txtSignupFullName.text.toString(),
                 mail = binding.txtSignupMail.text.toString(),
-                password = binding.txtSignupPassword.text.toString()
+                password = binding.txtSignupPassword.text.toString(),
+                context = context
             )
         }
     }
@@ -41,15 +44,17 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         viewModel.signupStatus.observe(viewLifecycleOwner) {
             when (it){
                 is Resource.Loading -> {
-                    //TODO("progressbar need")
+                    binding.pbSignUp.showView()
                 }
                 is Resource.Success -> {
+                    binding.pbSignUp.hideView()
                     val mail = binding.txtSignupMail.text.toString()
                     val password = binding.txtSignupPassword.text.toString()
-                    viewModel.loginWithMail(mail, password)
+                    viewModel.loginWithMail(mail, password, requireContext())
                 }
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(),it.message.toString(), Toast.LENGTH_SHORT).show()
+                    binding.pbSignUp.hideView()
+                    Toast.makeText(requireContext(),it.message.toString(), Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -59,17 +64,25 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         viewModel.loginStatus.observe(viewLifecycleOwner){
             when(it){
                 is Resource.Loading -> {
-                    //TODO("progressbar need")
+                    binding.pbSignUp.showView()
                 }
                 is Resource.Success -> {
+                    binding.pbSignUp.hideView()
                     startActivity(Intent(requireActivity(), MainActivity::class.java))
                     activity?.finish()
                 }
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(),it.message.toString(), Toast.LENGTH_SHORT).show()
+                    binding.pbSignUp.hideView()
+                    Toast.makeText(requireContext(),it.message.toString(), Toast.LENGTH_LONG).show()
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        login()
+        signUp()
     }
 
 }

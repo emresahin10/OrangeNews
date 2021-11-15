@@ -123,13 +123,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:elevation="5dp"
-        android:fontFamily="@font/poppins_medium"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
+        style="@style/ButtonSpecify"
         android:text="@string/sign_up"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="16sp"
-        app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
@@ -146,5 +141,19 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgSignupLogo" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/pbSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/progressbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

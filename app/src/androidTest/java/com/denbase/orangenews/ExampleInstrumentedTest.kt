@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection", "SpellCheckingInspection")
+
 package com.denbase.orangenews
 
 import androidx.test.platform.app.InstrumentationRegistry

@@ -12,6 +12,8 @@ import com.denbase.orangenews.R
 import com.denbase.orangenews.databinding.FragmentLoginBinding
 import com.denbase.orangenews.ui.MainActivity
 import com.denbase.orangenews.utils.Resource
+import com.denbase.orangenews.utils.hideView
+import com.denbase.orangenews.utils.showView
 import com.denbase.orangenews.viewmodels.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -31,7 +33,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
        const val RC_SIGN_IN = 4926
        const val TAG = "GOOGLE_SIGN_IN"
     }
-    //  TODO("forgot password screen need")
 
     private lateinit var viewModel: AuthViewModel
     private lateinit var binding: FragmentLoginBinding
@@ -43,11 +44,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         viewModel = ViewModelProvider(requireActivity()).get(AuthViewModel::class.java)
 
-        binding.txtCreateAccount.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
-        }
 
-        login()
         firebaseAuth = Firebase.auth
 
         val gso = GoogleSignInOptions
@@ -56,21 +53,32 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             .requestEmail()
             .build()
 
-
         val client = GoogleSignIn.getClient(requireContext(),gso)
 
-        binding.btnGoogleLogin.setOnClickListener {
-            Log.d(TAG, "begin google sign in")
-            val intent = client.signInIntent
-            startActivityForResult(intent, RC_SIGN_IN)
+        binding.apply {
+            btnGoogleLogin.setOnClickListener {
+                Log.d(TAG, "begin google sign in")
+                val intent = client.signInIntent
+                startActivityForResult(intent, RC_SIGN_IN)
+            }
+
+            btnLogin.setOnClickListener {
+                val mail = binding.txtLoginEmail.text.toString()
+                val password = binding.txtLoginPassword.text.toString()
+                viewModel.loginWithMail(mail, password, context)
+            }
+
+            txtCreateAccount.setOnClickListener {
+                findNavController().navigate(LoginFragmentDirections
+                    .actionLoginFragmentToSignUpFragment())
+            }
+
+            txtForgotPassword.setOnClickListener {
+                findNavController().navigate(LoginFragmentDirections
+                    .actionLoginFragmentToForgotPasswordFragment())
+            }
         }
 
-        binding.btnLogin.setOnClickListener {
-            val mail = binding.txtLoginEmail.text.toString()
-            val password = binding.txtLoginPassword.text.toString()
-
-            viewModel.loginWithMail(mail, password)
-        }
 
     }
 
@@ -78,13 +86,15 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         viewModel.loginStatus.observe(viewLifecycleOwner){
             when(it){
                 is Resource.Loading -> {
-                  // TODO("need progressbar")
+                  binding.pbLogin.showView()
                 }
                 is Resource.Success -> {
+                    binding.pbLogin.hideView()
                     startActivity(Intent(requireActivity(), MainActivity::class.java))
                     activity?.finish()
                 }
                 is Resource.Error -> {
+                    binding.pbLogin.hideView()
                     Toast.makeText(requireContext(),it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
             }
@@ -92,6 +102,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     override fun onStart() {
+        login()
         super.onStart()
         val currentUser = firebaseAuth.currentUser
         updateUI(currentUser)

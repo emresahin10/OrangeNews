@@ -1,5 +1,7 @@
 package com.denbase.orangenews.repositories
 
+import android.content.Context
+import android.util.Log
 import com.denbase.orangenews.data.User
 import com.denbase.orangenews.utils.Resource
 import com.google.firebase.auth.AuthResult
@@ -14,7 +16,7 @@ class MainAuthRepository: AuthRepository {
     val users = FirebaseFirestore.getInstance().collection("users")
 
 
-    override suspend fun signUpWithMail(fullName: String, mail: String, password: String): Resource<AuthResult> {
+    override suspend fun signUpWithMail(fullName: String, mail: String, password: String, context: Context?): Resource<AuthResult> {
         try {
             val authResult = auth.createUserWithEmailAndPassword(mail, password).await()
 
@@ -29,11 +31,20 @@ class MainAuthRepository: AuthRepository {
         }
     }
 
-    override suspend fun loginWithMail(mail: String, password: String): Resource<AuthResult> {
+    override suspend fun loginWithMail(mail: String, password: String, context: Context?): Resource<AuthResult> {
         try {
-            var authResult = auth.signInWithEmailAndPassword(mail, password).await()
+            val authResult = auth.signInWithEmailAndPassword(mail, password).await()
 
             return Resource.Success(authResult)
+        }catch (e: Exception){
+            return Resource.Error(e.message)
+        }
+    }
+
+    override suspend fun resetPassword(mail: String, context: Context?): Resource<Void> {
+        try {
+           val resetPassword =  auth.sendPasswordResetEmail(mail).await()
+            return Resource.Success(resetPassword)
         }catch (e: Exception){
             return Resource.Error(e.message)
         }
