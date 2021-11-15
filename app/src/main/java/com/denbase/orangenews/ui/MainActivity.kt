@@ -6,8 +6,6 @@ import android.os.Bundle
 import com.denbase.orangenews.databinding.ActivityMainBinding
 import com.denbase.orangenews.ui.auth.AuthActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 

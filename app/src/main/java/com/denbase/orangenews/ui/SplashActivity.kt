@@ -14,8 +14,8 @@ import kotlinx.coroutines.launch
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
-    val scope = MainScope()
-    var job: Job? = null
+    private val scope = MainScope()
+    private var job: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
 
 
     }
-    fun startDelay(){
+    private fun startDelay(){
         stopDelay()
         job = scope.launch {
             delay(SPLASH_TIME)
@@ -37,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    fun stopDelay(){
+    private fun stopDelay(){
         job?.cancel()
         job = null
     }

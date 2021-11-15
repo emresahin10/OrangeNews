@@ -20,7 +20,7 @@ class AuthViewModel @Inject constructor(
 
 
     private var _loginStatus = MutableLiveData<Resource<AuthResult>>()
-    var logintatus: LiveData<Resource<AuthResult>> = _loginStatus
+    var loginStatus: LiveData<Resource<AuthResult>> = _loginStatus
 
 
 

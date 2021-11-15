@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.denbase.orangenews.R
@@ -29,8 +28,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     companion object {
-        val RC_SIGN_IN = 4926
-        val TAG = "GOOGLE_SIGN_IN"
+       const val RC_SIGN_IN = 4926
+       const val TAG = "GOOGLE_SIGN_IN"
     }
     //  TODO("forgot password screen need")
 
@@ -61,7 +60,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val client = GoogleSignIn.getClient(requireContext(),gso)
 
         binding.btnGoogleLogin.setOnClickListener {
-            Log.d(TAG, "begin google signin")
+            Log.d(TAG, "begin google sign in")
             val intent = client.signInIntent
             startActivityForResult(intent, RC_SIGN_IN)
         }
@@ -75,8 +74,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     }
 
-    fun login(){
-        viewModel.logintatus.observe(viewLifecycleOwner, Observer {
+    private fun login(){
+        viewModel.loginStatus.observe(viewLifecycleOwner){
             when(it){
                 is Resource.Loading -> {
                   // TODO("need progressbar")
@@ -89,12 +88,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     Toast.makeText(requireContext(),it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
             }
-        })
+        }
     }
 
     override fun onStart() {
         super.onStart()
-        var currentUser = firebaseAuth.getCurrentUser()
+        val currentUser = firebaseAuth.currentUser
         updateUI(currentUser)
 
     }
