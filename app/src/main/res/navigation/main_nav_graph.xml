@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/menuItemHome"
         android:name="com.denbase.orangenews.ui.main.HomeFragment"
-        android:label="Home"
+        android:label=""
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/menuItemCategory"
         android:name="com.denbase.orangenews.ui.main.CategoryFragment"
-        android:label="Category"
+        android:label=""
         tools:layout="@layout/fragment_category" />
     <fragment
         android:id="@+id/menuItemSave"
         android:name="com.denbase.orangenews.ui.main.SaveFragment"
-        android:label="Saved"
+        android:label=""
         tools:layout="@layout/fragment_save" />
 </navigation>
