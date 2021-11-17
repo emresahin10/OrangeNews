@@ -19,4 +19,8 @@
     <string name="reset_password">Reset Password</string>
     <string name="reset_password_msg">" We have received your password reset request. Please check your mail"</string>
     <string name="empty_fields">You cannot leave the fields blank.</string>
+    <string name="empty_field_mail">You cannot empty mail address</string>
+    <string name="save">Save</string>
+    <string name="category">Category</string>
+    <string name="home">Home</string>
 </resources>

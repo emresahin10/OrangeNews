@@ -99,4 +99,6 @@ dependencies {
     //Lottie
     implementation "com.airbnb.android:lottie:3.4.0"
 
+    //BottomBar
+    implementation 'com.github.st235:expandablebottombar:1.4.0'
 }

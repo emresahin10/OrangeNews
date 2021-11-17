@@ -63,7 +63,8 @@ class AuthViewModel @Inject constructor(
     }
 
     fun resetPassword(mail: String, context: Context?){
-        val errorMsg = if (mail.isEmpty()) "You can't empty mail address" else null
+        val errorMsg = if (mail.isEmpty())
+            context?.getString(R.string.empty_field_mail) else null
 
         errorMsg?.let {
             _resetPasswordStatus.postValue(Resource.Error(it))

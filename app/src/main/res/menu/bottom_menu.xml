@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuItemHome"
+        android:icon="@drawable/ic_home"
+        app:exb_color="#FFFFFF"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/menuItemCategory"
+        android:icon="@drawable/ic_category"
+        app:exb_color="@color/softOrange"
+        android:title="@string/category" />
+    <item
+        android:id="@+id/menuItemSave"
+        android:icon="@drawable/ic_bookmark"
+        android:title="@string/save" />
+</menu>

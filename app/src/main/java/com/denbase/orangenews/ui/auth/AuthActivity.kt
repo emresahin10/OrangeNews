@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.denbase.orangenews.R
 import com.denbase.orangenews.databinding.ActivityAuthBinding
-import com.denbase.orangenews.ui.MainActivity
+import com.denbase.orangenews.ui.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 

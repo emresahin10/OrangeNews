@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "658111028338-n8136b058i431odjhddfeeeu6vnddqo3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.denbase.orangenews",
+            "certificate_hash": "32dcb32d53c37b7889fa20adb4159a034c1cfa7b"
+          }
+        },
+        {
           "client_id": "658111028338-cu3e3osvn53c6bhtl92icv6ktt7jsfd2.apps.googleusercontent.com",
           "client_type": 3
         }

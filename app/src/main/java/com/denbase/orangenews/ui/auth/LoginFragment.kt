@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.denbase.orangenews.R
 import com.denbase.orangenews.databinding.FragmentLoginBinding
-import com.denbase.orangenews.ui.MainActivity
+import com.denbase.orangenews.ui.main.MainActivity
 import com.denbase.orangenews.utils.Resource
 import com.denbase.orangenews.utils.hideView
 import com.denbase.orangenews.utils.showView

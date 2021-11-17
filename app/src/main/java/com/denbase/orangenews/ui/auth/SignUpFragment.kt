@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.denbase.orangenews.R
 import com.denbase.orangenews.databinding.FragmentSignUpBinding
-import com.denbase.orangenews.ui.MainActivity
+import com.denbase.orangenews.ui.main.MainActivity
 import com.denbase.orangenews.utils.Resource
 import com.denbase.orangenews.utils.hideView
 import com.denbase.orangenews.utils.showView
