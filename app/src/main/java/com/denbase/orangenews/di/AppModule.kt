@@ -1,11 +1,16 @@
 package com.denbase.orangenews.di
 
 import android.content.Context
+import com.denbase.orangenews.api.NewsApi
+import com.denbase.orangenews.repositories.MainNewsRepository
+import com.denbase.orangenews.repositories.NewsRepository
 import com.denbase.orangenews.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,22 +19,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object AppModule {
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun provideApplicationContext(
         @ApplicationContext context: Context) = context
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor()
         .apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
         OkHttpClient
@@ -37,11 +42,19 @@ object AppModule {
             .addInterceptor(httpLoggingInterceptor)
             .build()
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .baseUrl(BASE_URL)
         .build()
+
+    @ViewModelScoped
+    @Provides
+    fun provideApiService(retrofit: Retrofit): NewsApi = retrofit.create(NewsApi::class.java)
+
+    @ViewModelScoped
+    @Provides
+    fun provideRepository(api: NewsApi) = MainNewsRepository(api) as NewsRepository
 }

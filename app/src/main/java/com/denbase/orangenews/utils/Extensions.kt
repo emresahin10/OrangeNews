@@ -5,7 +5,9 @@ import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.view.View
+import android.widget.ImageView
 import androidx.annotation.StyleRes
+import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
@@ -37,4 +39,9 @@ fun MaterialAlertDialogBuilder.neutralButton(
     handleClick: (dialogInterface: DialogInterface) -> Unit = { it.dismiss() }
 ) {
     this.setNegativeButton(text) { dialogInterface, _ -> handleClick(dialogInterface) }
+}
+
+//Image Download
+fun  ImageView.downloadImage(url: String?){
+    Glide.with(this).load(url).centerCrop().into(this)
 }
