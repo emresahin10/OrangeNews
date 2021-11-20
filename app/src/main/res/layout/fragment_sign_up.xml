@@ -47,7 +47,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/new_account"
-        android:textColor="@color/titleColor"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgBottomShape" />
@@ -57,6 +57,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:hintTextColor="?attr/colorOnSecondary"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
@@ -69,7 +70,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtSignupFullName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSecondary"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -90,7 +92,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtSignupMail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSecondary"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -111,8 +114,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtSignupPassword"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:layout_height="wrap_content" />
+            android:textColor="?attr/colorOnSecondary"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -125,6 +129,7 @@
         android:elevation="5dp"
         style="@style/ButtonSpecify"
         android:text="@string/sign_up"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
@@ -137,7 +142,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Be up to date, \nread and watch"
-        android:textColor="@color/design_default_color_on_primary"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgSignupLogo" />

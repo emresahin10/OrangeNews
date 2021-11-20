@@ -46,7 +46,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/welcome_back"
-        android:textColor="@color/titleColor"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgBottomShape" />
@@ -60,6 +60,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/email"
+        app:hintTextColor="?attr/colorOnSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSignupSubTitle"
@@ -68,7 +69,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtLoginEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSecondary"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -76,6 +79,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:hintTextColor="?attr/colorOnSecondary"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
@@ -89,6 +93,7 @@
             android:id="@+id/txtLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSecondary"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,6 +104,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
+        android:textColor="?attr/colorOnPrimary"
         android:elevation="5dp"
         android:fontFamily="@font/poppins_medium"
         android:insetTop="0dp"
@@ -119,7 +125,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/auth_title"
-        android:textColor="@color/design_default_color_on_primary"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgLoginLogo" />
@@ -129,6 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:textColor="?attr/colorOnPrimary"
         android:drawableLeft="@drawable/ic_google_logo"
         android:fontFamily="@font/poppins_medium"
         android:insetTop="0dp"
@@ -151,6 +158,7 @@
         android:fontFamily="@font/poppins"
         android:text="@string/or_sign_up_and_login_with"
         android:textSize="14sp"
+        android:textColor="?attr/colorSecondaryVariant"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />

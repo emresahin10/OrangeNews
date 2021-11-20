@@ -9,7 +9,16 @@
         android:id="@+id/menuItemHome"
         android:name="com.denbase.orangenews.ui.main.HomeFragment"
         android:label=""
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_menuItemHome_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+        <argument
+            android:name="detailUrl"
+            app:argType="string"
+            android:defaultValue=""/>
+
+    </fragment>
     <fragment
         android:id="@+id/menuItemCategory"
         android:name="com.denbase.orangenews.ui.main.CategoryFragment"
@@ -20,4 +29,9 @@
         android:name="com.denbase.orangenews.ui.main.SaveFragment"
         android:label=""
         tools:layout="@layout/fragment_save" />
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.denbase.orangenews.data.ArticleDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_article_detail" />
 </navigation>
