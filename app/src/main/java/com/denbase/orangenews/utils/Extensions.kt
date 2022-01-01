@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
-//Visibility changes
 fun View.hideView(){
     this.visibility = View.GONE
 }
@@ -19,7 +18,6 @@ fun View.hideView(){
 fun View.showView(){
     this.visibility = View.VISIBLE
 }
-
 
 //AlertDialog Builder
 fun Context.alert(
@@ -41,7 +39,6 @@ fun MaterialAlertDialogBuilder.neutralButton(
     this.setNegativeButton(text) { dialogInterface, _ -> handleClick(dialogInterface) }
 }
 
-//Image Download
 fun  ImageView.downloadImage(url: String?){
     Glide.with(this).load(url).centerCrop().into(this)
 }
