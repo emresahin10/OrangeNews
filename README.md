@@ -26,7 +26,6 @@ Thanks for
 * Navigation Components
 * Kotlin Coroutines
 * Lottie
-* Pagging3
 * Firebase
 <hr>
 
