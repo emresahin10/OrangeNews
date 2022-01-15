@@ -14,10 +14,8 @@ Thanks for
 <li>
 <a href="https://www.svgrepo.com">SVG icons</a>
 
-
 ## Techs
 * Kotlin
-* Material Design
 * MVVM Architecture
 * Dagger Hilt
 * Retrofit
