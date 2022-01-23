@@ -1,7 +1,5 @@
 # Orange News
 
-<h4>I update every day</h4>
-
 ## API
 * https://newsapi.org
 
